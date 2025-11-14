@@ -630,16 +630,20 @@
         img.src = src;
       }, [src]);
 
+      // iOS/モバイルデバイスの検出
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
       // エラー時または読み込み前は黄色の背景を表示
       if (hasError || !imgLoaded) {
         return (
-          <div 
+          <div
             className="fixed inset-0 z-0"
             style={{
               backgroundColor: '#fff76a',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              backgroundAttachment: 'fixed',
+              backgroundAttachment: isIOS ? 'scroll' : 'fixed',
               backgroundRepeat: 'no-repeat'
             }}
           />
@@ -647,14 +651,15 @@
       }
 
       // 画像が正常に読み込まれた場合
+      // iOSではbackground-attachment: fixedがサポートされていないため、scrollを使用
       return (
-        <div 
+        <div
           className="fixed inset-0 z-0"
           style={{
             backgroundImage: `url('${src}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
+            backgroundAttachment: isIOS ? 'scroll' : 'fixed',
             backgroundRepeat: 'no-repeat'
           }}
         />
@@ -1158,11 +1163,14 @@
 
               {/* Mobile Menu Button */}
               <button 
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-white"
+              onMouseEnter={(e) => e.currentTarget.style.color = '#fff76a'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+              style={{ background: 'transparent', border: 'none', padding: 0, color: 'white' }}
               >
-                {mobileMenuOpen ? <XIcon size={28} /> : <MenuIcon size={28} />}
-              </button>
+              {mobileMenuOpen ? <XIcon size={28} /> : <MenuIcon size={28} />}
+            </button>
             </div>
 
             {/* Mobile Navigation Menu */}
