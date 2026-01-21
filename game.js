@@ -31,6 +31,8 @@ let nextMushroomType = 0;
 let canDrop = true;
 let score = 0;
 let isGameOver = false;
+let isMobile = false;
+let isTouching = false;
 
 // Mushroom Types (Size and Image)
 // Order: Shimeji -> Enoki -> Shiitake -> Eringi -> Matsutake -> Logo
@@ -169,19 +171,57 @@ function create() {
 
     // ... existing functions ...
 
-    // Input
-    this.input.on('pointermove', (pointer) => {
-        if (currentMushroom && canDrop && !isGameOver) {
-            let x = Phaser.Math.Clamp(pointer.x, 30, 330);
-            currentMushroom.x = x;
-        }
-    });
+    // Detect mobile device
+    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+               ('ontouchstart' in window) ||
+               (navigator.maxTouchPoints > 0);
 
-    this.input.on('pointerdown', (pointer) => {
-        if (currentMushroom && canDrop && !isGameOver) {
-            dropMushroom(this);
-        }
-    });
+    // Input - PC (mouse follow + click to drop)
+    if (!isMobile) {
+        this.input.on('pointermove', (pointer) => {
+            if (currentMushroom && canDrop && !isGameOver) {
+                let x = Phaser.Math.Clamp(pointer.x, 30, 330);
+                currentMushroom.x = x;
+            }
+        });
+
+        this.input.on('pointerdown', () => {
+            if (currentMushroom && canDrop && !isGameOver) {
+                dropMushroom(this);
+            }
+        });
+    }
+    // Input - Mobile (touch & drag, release to drop)
+    else {
+        this.input.on('pointerdown', (pointer) => {
+            if (currentMushroom && canDrop && !isGameOver) {
+                isTouching = true;
+                let x = Phaser.Math.Clamp(pointer.x, 30, 330);
+                currentMushroom.x = x;
+            }
+        });
+
+        this.input.on('pointermove', (pointer) => {
+            if (currentMushroom && canDrop && !isGameOver && isTouching) {
+                let x = Phaser.Math.Clamp(pointer.x, 30, 330);
+                currentMushroom.x = x;
+            }
+        });
+
+        this.input.on('pointerup', () => {
+            if (currentMushroom && canDrop && !isGameOver && isTouching) {
+                isTouching = false;
+                dropMushroom(this);
+            }
+        });
+
+        this.input.on('pointerupoutside', () => {
+            if (currentMushroom && canDrop && !isGameOver && isTouching) {
+                isTouching = false;
+                dropMushroom(this);
+            }
+        });
+    }
 
     // Collision Event
     this.matter.world.on('collisionstart', (event) => {
