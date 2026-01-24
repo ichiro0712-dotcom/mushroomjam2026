@@ -133,8 +133,33 @@ nav a:hover {
     gap: 30px;
     justify-content: center;
     margin-top: 40px;
-    margin-bottom: 80px;
-    /* Increased from 40px */
+}
+
+#next-display {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+    color: var(--light);
+    text-shadow: 0 0 5px var(--secondary);
+    z-index: 20;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#score-display {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: var(--light);
+    text-shadow: 0 0 5px var(--secondary);
+    z-index: 20;
+    pointer-events: none;
+    font-size: 1.2rem;
 }
 
 .hero-sns .sns-icon {
@@ -413,8 +438,25 @@ button:hover {
 }
 
 #high-score-list li {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+/* Compact Game Over Buttons */
+#game-over-screen button {
+    margin: 5px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+#game-over-screen h3 {
+    margin-bottom: 5px;
+}
+
+#game-over-screen p {
+    margin-bottom: 5px;
 }
 
 #high-score-input-container {

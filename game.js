@@ -140,6 +140,10 @@ function create() {
     graphics.fillStyle(0x000000, 0.3);
     graphics.fillRect(0, 0, 360, 100);
 
+    // Visual guide for spawn area (debugging/visual)
+    // graphics.lineStyle(2, 0x00ff00, 0.5);
+    // graphics.strokeRect(0, 80, 360, 1);
+
     graphics.lineStyle(2, 0xff0000, 0.5);
     graphics.beginPath();
     graphics.moveTo(0, 100);
@@ -176,50 +180,77 @@ function create() {
                ('ontouchstart' in window) ||
                (navigator.maxTouchPoints > 0);
 
-    // Input - PC (mouse follow + click to drop)
-    if (!isMobile) {
-        this.input.on('pointermove', (pointer) => {
-            if (currentMushroom && canDrop && !isGameOver) {
-                let x = Phaser.Math.Clamp(pointer.x, 30, 330);
-                currentMushroom.x = x;
-            }
-        });
+    // Input - Global handling (Window-based)
+    // This allows interaction even outside the canvas element
+    const handleInputMove = (clientX) => {
+        if (currentMushroom && canDrop && !isGameOver) {
+            // Convert page X to canvas-relative X
+            const canvas = this.game.canvas;
+            const rect = canvas.getBoundingClientRect();
+            
+            // Calculate scale in case canvas is resized via CSS
+            const scaleX = canvas.width / rect.width;
+            
+            // Calculate world X
+            let worldX = (clientX - rect.left) * scaleX;
+            
+            // Clamp to game bounds (with margin)
+            let x = Phaser.Math.Clamp(worldX, 30, 330);
+            currentMushroom.x = x;
+        }
+    };
 
-        this.input.on('pointerdown', () => {
-            if (currentMushroom && canDrop && !isGameOver) {
+    const handleInputEnd = () => {
+        if (currentMushroom && canDrop && !isGameOver) {
+            if (isMobile) {
+                // For mobile, we only drop if we were "touching" (interacting)
+                if (isTouching) {
+                    isTouching = false;
+                    dropMushroom(this);
+                }
+            } else {
+                // PC click to drop
                 dropMushroom(this);
             }
+        }
+    };
+
+    // PC Mouse Events
+    if (!isMobile) {
+        window.addEventListener('mousemove', (e) => {
+            handleInputMove(e.clientX);
+        });
+
+        window.addEventListener('mousedown', (e) => {
+            // Only trigger if clicking significantly close or within game area?
+            // User requested "game screen whole and its left and right"
+            // So we'll accept clicks broadly.
+            handleInputEnd();
         });
     }
-    // Input - Mobile (touch & drag, release to drop)
+    // Mobile Touch Events
     else {
-        this.input.on('pointerdown', (pointer) => {
+        // Prevent default scrolling when touching game area
+        // We'll attach a non-passive listener to the window/game container to prevent scroll 
+        // IF the touch is within "control range".
+        
+        window.addEventListener('touchstart', (e) => {
             if (currentMushroom && canDrop && !isGameOver) {
                 isTouching = true;
-                let x = Phaser.Math.Clamp(pointer.x, 30, 330);
-                currentMushroom.x = x;
+                handleInputMove(e.touches[0].clientX);
             }
-        });
+        }, { passive: false });
 
-        this.input.on('pointermove', (pointer) => {
-            if (currentMushroom && canDrop && !isGameOver && isTouching) {
-                let x = Phaser.Math.Clamp(pointer.x, 30, 330);
-                currentMushroom.x = x;
+        window.addEventListener('touchmove', (e) => {
+            if (isTouching) {
+                // Prevent scrolling if we are dragging the mushroom
+                // e.preventDefault(); 
+                handleInputMove(e.touches[0].clientX);
             }
-        });
+        }, { passive: false });
 
-        this.input.on('pointerup', () => {
-            if (currentMushroom && canDrop && !isGameOver && isTouching) {
-                isTouching = false;
-                dropMushroom(this);
-            }
-        });
-
-        this.input.on('pointerupoutside', () => {
-            if (currentMushroom && canDrop && !isGameOver && isTouching) {
-                isTouching = false;
-                dropMushroom(this);
-            }
+        window.addEventListener('touchend', (e) => {
+             handleInputEnd();
         });
     }
 
@@ -281,14 +312,14 @@ function saveHighScore(name, score) {
     const scores = getHighScores();
     scores.push({ name, score });
     scores.sort((a, b) => b.score - a.score);
-    const top5 = scores.slice(0, 5);
-    localStorage.setItem('mushroomHighScores', JSON.stringify(top5));
+    const top9 = scores.slice(0, 9);
+    localStorage.setItem('mushroomHighScores', JSON.stringify(top9));
     displayHighScores();
 }
 
 function checkHighScore() {
     const scores = getHighScores();
-    const isHighScore = scores.length < 5 || score > scores[scores.length - 1].score;
+    const isHighScore = scores.length < 9 || score > scores[scores.length - 1].score;
 
     const inputContainer = document.getElementById('high-score-input-container');
     if (isHighScore && inputContainer) {
@@ -346,7 +377,7 @@ function spawnNextMushroom(scene) {
         nextImg.style.objectFit = 'contain';
     }
 
-    currentMushroom = scene.add.image(180, 30, data.type);
+    currentMushroom = scene.add.image(180, 80, data.type);
     currentMushroom.setScale(data.scale);
     currentMushroom.mushroomType = typeIndex;
     currentMushroom.setAlpha(0.8);
