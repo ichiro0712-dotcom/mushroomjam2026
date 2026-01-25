@@ -417,14 +417,16 @@ button:hover {
 }
 
 /* High Score Styles */
-#high-score-list {
+#high-score-list,
+#high-score-list-gameover {
     margin: 15px 0;
     text-align: left;
     width: 100%;
     max-width: 200px;
 }
 
-#high-score-list h4 {
+#high-score-list h4,
+#high-score-list-gameover h4 {
     color: var(--accent);
     border-bottom: 1px solid var(--accent);
     padding-bottom: 5px;
@@ -432,12 +434,14 @@ button:hover {
     text-align: center;
 }
 
-#high-score-list ol {
+#high-score-list ol,
+#high-score-list-gameover ol {
     padding-left: 20px;
     color: var(--light);
 }
 
-#high-score-list li {
+#high-score-list li,
+#high-score-list-gameover li {
     margin-bottom: 2px;
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-size: 0.9rem;
@@ -993,52 +997,52 @@ footer {
         padding: 20px 15px;
         font-size: 0.85rem;
     }
-}
 
-/* Game UI */
-#start-screen h3,
-#game-over-screen h3 {
-    font-size: 1.2rem;
-}
+    /* Game UI */
+    #start-screen h3,
+    #game-over-screen h3 {
+        font-size: 1.2rem;
+    }
 
-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-}
+    button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
 
-#high-score-list {
-    max-width: 160px;
-}
+    #high-score-list,
+    #high-score-list-gameover {
+        max-width: 160px;
+    }
 
-#player-name {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 10px;
-}
+    #player-name {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 
-#high-score-input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    #high-score-input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Modal on mobile */
-.member-modal-content {
-    width: 95%;
-    max-height: 85vh;
-}
+    /* Modal on mobile */
+    .member-modal-content {
+        width: 95%;
+        max-height: 85vh;
+    }
 
-.member-modal-info {
-    padding: 20px;
-}
+    .member-modal-info {
+        padding: 20px;
+    }
 
-.member-modal-info h3 {
-    font-size: 1.5rem;
-}
+    .member-modal-info h3 {
+        font-size: 1.5rem;
+    }
 
-.member-modal-bio {
-    font-size: 0.9rem;
-}
+    .member-modal-bio {
+        font-size: 0.9rem;
+    }
 }
 
 /* Responsive - Small Mobile */

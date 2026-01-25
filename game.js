@@ -135,6 +135,9 @@ function create() {
         }, 200);
     }
 
+    // Initialize Danger Timer
+    this.dangerTimer = 0;
+
     // Game Over Zone
     const graphics = this.add.graphics();
     graphics.fillStyle(0x000000, 0.3);
@@ -177,8 +180,8 @@ function create() {
 
     // Detect mobile device
     isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-               ('ontouchstart' in window) ||
-               (navigator.maxTouchPoints > 0);
+        ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0);
 
     // Input - Global handling (Window-based)
     // This allows interaction even outside the canvas element
@@ -187,13 +190,13 @@ function create() {
             // Convert page X to canvas-relative X
             const canvas = this.game.canvas;
             const rect = canvas.getBoundingClientRect();
-            
+
             // Calculate scale in case canvas is resized via CSS
             const scaleX = canvas.width / rect.width;
-            
+
             // Calculate world X
             let worldX = (clientX - rect.left) * scaleX;
-            
+
             // Clamp to game bounds (with margin)
             let x = Phaser.Math.Clamp(worldX, 30, 330);
             currentMushroom.x = x;
@@ -233,7 +236,7 @@ function create() {
         // Prevent default scrolling when touching game area
         // We'll attach a non-passive listener to the window/game container to prevent scroll 
         // IF the touch is within "control range".
-        
+
         window.addEventListener('touchstart', (e) => {
             if (currentMushroom && canDrop && !isGameOver) {
                 isTouching = true;
@@ -250,7 +253,7 @@ function create() {
         }, { passive: false });
 
         window.addEventListener('touchend', (e) => {
-             handleInputEnd();
+            handleInputEnd();
         });
     }
 
@@ -276,19 +279,37 @@ function create() {
     spawnNextMushroom(this);
 }
 
-function update() {
+function update(time, delta) {
     if (isGameOver) return;
 
     // Game Over Check
     const bodies = this.matter.world.localWorld.bodies;
+    let isDangerous = false;
+
     for (let i = 0; i < bodies.length; i++) {
         const body = bodies[i];
         if (!body.isStatic && body.gameObject && body.gameObject.active) {
+            // Check if any mushroom is settled above the threshold
             if (body.position.y < 100 && Math.abs(body.velocity.y) < 0.1 && Math.abs(body.velocity.x) < 0.1) {
-                gameOver();
+                isDangerous = true;
                 break;
             }
         }
+    }
+
+    if (isDangerous) {
+        // Accumulate danger time (approx 60fps ~ 16.6ms)
+        // We use a safe default if delta is somehow missing or large
+        const dt = delta || 16.6;
+        this.dangerTimer = (this.dangerTimer || 0) + dt;
+
+        // Trigger Game Over only after 2 seconds of continuous danger
+        if (this.dangerTimer > 2000) {
+            gameOver();
+        }
+    } else {
+        // Reset timer immediately if safe
+        this.dangerTimer = 0;
     }
 }
 
@@ -339,23 +360,27 @@ function submitHighScore() {
 }
 
 function displayHighScores() {
-    const list = document.getElementById('high-score-list');
-    if (!list) return;
-
+    const listIds = ['high-score-list', 'high-score-list-gameover'];
     const scores = getHighScores();
-    list.innerHTML = '<h4>HIGH SCORES</h4>';
-    if (scores.length === 0) {
-        list.innerHTML += '<p>No scores yet</p>';
-        return;
-    }
 
-    const ol = document.createElement('ol');
-    scores.forEach(s => {
-        const li = document.createElement('li');
-        li.innerText = `${s.name}: ${s.score}`;
-        ol.appendChild(li);
+    listIds.forEach(id => {
+        const list = document.getElementById(id);
+        if (!list) return;
+
+        list.innerHTML = '<h4>HIGH SCORES</h4>';
+        if (scores.length === 0) {
+            list.innerHTML += '<p>No scores yet</p>';
+            return;
+        }
+
+        const ol = document.createElement('ol');
+        scores.forEach(s => {
+            const li = document.createElement('li');
+            li.innerText = `${s.name}: ${s.score}`;
+            ol.appendChild(li);
+        });
+        list.appendChild(ol);
     });
-    list.appendChild(ol);
 }
 
 document.addEventListener('DOMContentLoaded', displayHighScores);
