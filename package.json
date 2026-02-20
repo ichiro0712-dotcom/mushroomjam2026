@@ -22,5 +22,10 @@
   "homepage": "https://github.com/ichiro0712-dotcom/mushroomstamps#readme",
   "devDependencies": {
     "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-react": "^7.28.5"
   }
 }
