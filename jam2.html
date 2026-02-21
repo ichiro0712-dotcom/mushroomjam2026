@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>それだけでは食っていけないクリエイター祭り2026</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@700&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
@@ -23,7 +26,7 @@
             --text-sub: #A0A0A0;
             --glass-bg: rgba(20, 20, 20, 0.6);
             --glass-border: rgba(255, 255, 255, 0.08);
-            
+
             --font-display: 'Montserrat', 'Noto Sans JP', sans-serif;
             --font-body: 'Noto Sans JP', sans-serif;
             --font-accent: 'Oswald', sans-serif;
@@ -86,7 +89,7 @@
         }
 
         .hover-lift:hover {
-            transform: translateY(-8px);
+            transform: translateY(-8px) !important;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-glow);
             border-color: rgba(255, 215, 0, 0.3);
         }
@@ -393,9 +396,19 @@
 
         .pricing-table th,
         .pricing-table td {
-            padding: 1.5rem;
+            padding: 0.75rem 0.5rem;
             border-bottom: 1px solid var(--glass-border);
             text-align: left;
+            font-size: 0.85rem;
+        }
+
+        @media (min-width: 768px) {
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
         }
 
         .pricing-table th {
@@ -439,14 +452,15 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 3rem;
-            padding-left: 70px;
+            margin-bottom: 1.5rem;
+            padding-left: 60px;
         }
 
         @media (min-width: 768px) {
             .timeline-item {
                 padding-left: 0;
                 width: 50%;
+                margin-bottom: 3rem;
             }
 
             .timeline-item:nth-child(odd) {
@@ -490,6 +504,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -499,10 +514,17 @@
         .animate-fade-up {
             animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
     </style>
 </head>
+
 <body>
     <div id="root"></div>
     <script type="text/babel">
@@ -618,7 +640,7 @@
                                 <h2 className="section-title font-display text-gradient">NEWS</h2>
                                 <div className="section-line"></div>
                             </div>
-                            <div className="glass-panel" style={{ padding: '3rem' }}>
+                            <div className="glass-panel hover-lift" style={{ padding: '3rem' }}>
                                 <div className="space-y-8" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                                     {news.map((item, index) => (
                                         <div key={index} style={{ borderBottom: index < news.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none', paddingBottom: index < news.length - 1 ? '2rem' : '0' }}>
@@ -638,7 +660,7 @@
                                 <h2 className="section-title font-display text-primary-gradient">VISION</h2>
                                 <div className="section-line"></div>
                             </div>
-                            
+
                             <div className="glass-panel feature-card hover-lift animate-fade-up delay-1" style={{ maxWidth: '900px', margin: '0 auto' }}>
                                 <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700 }}>数字の先にある「人間の熱量」と情熱の可視化</h4>
                                 <p style={{ color: 'var(--text-sub)', marginBottom: '1.5rem' }}>
@@ -689,7 +711,7 @@
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
                                 {/* Main Stage */}
-                                <div className="glass-panel" style={{ padding: '4rem', position: 'relative', overflow: 'hidden' }}>
+                                <div className="glass-panel hover-lift" style={{ padding: '4rem', position: 'relative', overflow: 'hidden' }}>
                                     <div style={{ position: 'absolute', right: '-5%', top: '-20%', fontSize: '20rem', opacity: 0.03, pointerEvents: 'none' }}>🎤</div>
 
                                     <div style={{ marginBottom: '3rem' }}>
@@ -721,7 +743,7 @@
                                 </div>
 
                                 {/* Collab */}
-                                <div className="glass-panel" style={{ padding: '4rem', position: 'relative', overflow: 'hidden', background: 'rgba(30, 25, 5, 0.4)' }}>
+                                <div className="glass-panel hover-lift" style={{ padding: '4rem', position: 'relative', overflow: 'hidden', background: 'rgba(30, 25, 5, 0.4)' }}>
                                     <div style={{ position: 'absolute', left: '-5%', bottom: '-20%', fontSize: '20rem', opacity: 0.03, pointerEvents: 'none' }}>🤝</div>
 
                                     <div style={{ marginBottom: '3rem', position: 'relative', zIndex: 10 }}>
@@ -767,41 +789,42 @@
                                 </p>
                             </div>
 
-                            <div className="grid-2" style={{ marginBottom: '4rem' }}>
-                                <div className="glass-panel" style={{ padding: '2.5rem' }}>
-                                    <div style={{ width: '60px', height: '60px', background: 'var(--primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 0 20px var(--primary-glow)' }}>⚾</div>
-                                    <h3 className="font-display text-white" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>ステージへ直接投げ込む</h3>
-                                    <p style={{ color: 'var(--text-sub)' }}>
-                                        ステージ演奏中・演技中、観客は購入した「推しボール」をステージに投げ込むことで直接応援が可能。演者に当たってもOK。溢れる気持ちを物理的に「投げつける」ことで熱量を届けます。
-                                    </p>
-                                </div>
-                                <div className="glass-panel" style={{ padding: '2.5rem' }}>
-                                    <div style={{ width: '60px', height: '60px', background: 'var(--primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 0 20px var(--primary-glow)' }}>💰</div>
-                                    <h3 className="font-display text-white" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>リアルタイム演出＆還元</h3>
-                                    <p style={{ color: 'var(--text-sub)' }}>
-                                        巨大ボール投入時は会場のライティングや音響がダイナミックに変化。回収されたボールの数・種類に応じて、クリエイターへ即座に収益が還元されます。
-                                    </p>
+                            <div className="glass-panel hover-lift" style={{ padding: '2.5rem', marginBottom: '4rem' }}>
+                                <div className="grid-2">
+                                    <div>
+                                        <h3 className="font-display text-white" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>ステージへ投げ込め！</h3>
+                                        <p style={{ color: 'var(--text-sub)' }}>
+                                            ステージ演奏中・演技中、観客は購入した「推しボール」をステージに投げ込むことで直接応援が可能。演者に当たってもOK。溢れる気持ちを物理的に「投げつける」ことで熱量を届けます。
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-display text-white" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>リアルタイム演出＆還元</h3>
+                                        <p style={{ color: 'var(--text-sub)' }}>
+                                            巨大ボール投入時は会場のライティングや音響がダイナミックに変化。回収されたボールの数・種類に応じて、クリエイターへ即座に収益が還元されます。
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="glass-panel" style={{ overflowX: 'auto' }}>
+                            <div className="glass-panel hover-lift" style={{ padding: '1rem' }}>
                                 <table className="pricing-table">
                                     <thead>
                                         <tr>
                                             <th>ITEM</th>
-                                            <th>PRICE</th>
-                                            <th>EFFECTS / REWARDS</th>
+                                            <th style={{ textAlign: 'right' }}>PRICE</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {oshiItems.map((item, idx) => (
                                             <tr key={idx} className="pricing-row">
-                                                <td style={{ fontWeight: 'bold', color: '#fff', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                                    <span style={{ width: '10px', height: '10px', background: idx > 4 ? 'linear-gradient(135deg, #FFF76A 0%, #FF8C00 100%)' : 'var(--primary)', borderRadius: '50%', display: 'inline-block', boxShadow: '0 0 10px var(--primary-glow)' }}></span>
-                                                    {item.name}
+                                                <td style={{ color: '#fff' }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>
+                                                        <span style={{ width: '10px', height: '10px', background: idx > 4 ? 'linear-gradient(135deg, #FFF76A 0%, #FF8C00 100%)' : 'var(--primary)', borderRadius: '50%', display: 'inline-block', boxShadow: '0 0 10px var(--primary-glow)', flexShrink: 0 }}></span>
+                                                        <span>{item.name}</span>
+                                                    </div>
+                                                    <div style={{ fontSize: '0.75rem', color: 'var(--text-sub)', paddingLeft: '1.5rem', lineHeight: '1.4' }}>{item.effect}</div>
                                                 </td>
-                                                <td className="font-display" style={{ color: 'var(--primary)', fontSize: '1.25rem' }}>{item.price}</td>
-                                                <td style={{ color: 'var(--text-sub)' }}>{item.effect}</td>
+                                                <td className="font-display" style={{ color: 'var(--primary)', fontSize: '1.25rem', textAlign: 'right', whiteSpace: 'nowrap', verticalAlign: 'top', paddingTop: '1.5rem' }}>{item.price}</td>
                                             </tr>
                                         ))}
                                     </tbody>
@@ -834,7 +857,7 @@
                             </div>
                         </div>
                     </section>
-                    
+
                     {/* MC LIST */}
                     <section id="mc" className="section-padding" style={{ background: 'var(--bg-accent)' }}>
                         <div className="container text-center">
@@ -843,7 +866,7 @@
                                 <div className="section-line"></div>
                                 <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>予算50万円想定。この人のライブから入るのもあり</p>
                             </div>
-                            <div className="glass-panel" style={{ display: 'inline-block', padding: '3rem 5rem' }}>
+                            <div className="glass-panel hover-lift" style={{ display: 'inline-block', padding: '3rem 5rem' }}>
                                 <h3 className="font-display" style={{ fontSize: '2.5rem', color: '#fff' }}>ジャンポケ斎藤</h3>
                             </div>
                         </div>
@@ -859,12 +882,12 @@
                                 <div className="section-line"></div>
                                 <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>参加要項</p>
                             </div>
-                            
+
                             <div className="glass-panel hover-lift" style={{ padding: '3rem', marginBottom: '2rem' }}>
                                 <h3 className="font-bold mb-2" style={{ color: 'var(--primary)', fontSize: '1.25rem' }}>参加資格</h3>
                                 <p style={{ color: 'var(--text-sub)' }}>演奏やパフォーマンス、そしてファンとのコミュニケーションをリアルで「本気で」したい配信者・クリエイター</p>
                             </div>
-                            
+
                             <div className="grid-2">
                                 <div className="glass-panel hover-lift" style={{ padding: '3rem' }}>
                                     <h3 className="font-bold mb-4" style={{ color: 'var(--primary)', fontSize: '1.25rem' }}>協力事項</h3>
@@ -953,4 +976,5 @@
         ReactDOM.render(<App />, document.getElementById('root'));
     </script>
 </body>
+
 </html>
