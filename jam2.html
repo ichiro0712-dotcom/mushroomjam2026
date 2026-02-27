@@ -547,8 +547,8 @@
             ];
 
             const news = [
-                { date: "2026.XX.XX", title: "出演クリエイター急募！", description: "「それだけでは食っていけないクリエイター祭り2026」の参加者を募集開始いたしました。本気の30分ステージを創り上げてくれるクリエイターを募集しています！" },
-                { date: "2026.XX.XX", title: "企画始動", description: "普段の動画スタイルとは一線を画す「本気の一面」をライブでお届けするイベント企画がスタートしました！" }
+                { date: "2026.03.14", title: "出演クリエイター募集開始", description: "「それだけでは食っていけないクリエイター祭り2026」の参加者を募集開始いたしました。本気の30分ステージを創り上げてくれるクリエイターを募集しています！" },
+                { date: "2026.03.10", title: "MC決定！", description: "イベントを熱く盛り上げる総合MCとして、●●の出演が決定しました！当日のステージをお楽しみに。" }
             ];
 
             useEffect(() => {
@@ -559,7 +559,6 @@
 
             const navLinks = [
                 { name: 'VISION', href: '#vision' },
-                { name: 'OVERVIEW', href: '#overview' },
                 { name: 'CONTENTS', href: '#stage' },
                 { name: 'BALL SYSTEM', href: '#oshiball' },
                 { name: 'TIMETABLE', href: '#timetable' },
@@ -571,7 +570,7 @@
                     <header className={`nav-header ${scrolled ? 'shadow-lg' : ''}`} style={{ background: scrolled ? 'rgba(5,5,5,0.95)' : 'rgba(5,5,5,0.5)' }}>
                         <div className="container nav-content">
                             <div className="font-display" style={{ fontSize: '1.25rem', fontWeight: 900 }}>
-                                <span className="text-primary-gradient">CREATOR FES</span> <span className="text-gray-500">2026</span>
+                                <span className="text-primary-gradient">それ食え祭り</span> <span className="text-gray-500">2026</span>
                             </div>
 
                             <nav className="nav-links">
@@ -615,15 +614,15 @@
                         <div className="hero-bg"></div>
                         <div className="hero-particles"></div>
                         <div className="hero-content animate-fade-up">
-                            <div className="badge">GUEST CREATORS WANTED</div>
+                            <div className="badge">2026.5.29 20:00 START</div>
                             <h1 className="hero-title font-display">
-                                <span style={{ display: 'block', color: '#fff' }}>それだけでは</span>
-                                <span style={{ display: 'block', color: '#fff' }}>食っていけない</span>
-                                <span className="text-primary-gradient" style={{ display: 'block', marginTop: '0.5rem' }}>クリエイター祭り2026</span>
+                                <span className="text-primary-gradient" style={{ display: 'block', fontSize: 'clamp(1rem, 3vw, 2rem)', marginBottom: '0.5rem' }}>それだけでは食っていけないクリエイター祭り</span>
+                                <span style={{ display: 'block', color: '#fff' }}>それ食え祭り</span>
+                                <span className="text-primary-gradient" style={{ display: 'block', marginTop: '0.5rem' }}>2026</span>
                             </h1>
                             <p className="hero-subtitle">
-                                画面の向こう側の「本気」を、リアルな空間で解き放て。<br />
-                                ファンと創り上げる、一夜限りのプレミアムライブステージ。
+                                クリエイターの「本気」を画面の外へ解き放て！<br />
+                                ファンと創り上げる、一夜限りのプレミアムステージ
                             </p>
                             <div style={{ marginTop: '2rem' }}>
                                 <a href={applicationUrl} target="_blank" rel="noopener noreferrer" className="btn-super">
@@ -662,44 +661,20 @@
                             </div>
 
                             <div className="glass-panel feature-card hover-lift animate-fade-up delay-1" style={{ maxWidth: '900px', margin: '0 auto' }}>
-                                <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700 }}>数字の先にある「人間の熱量」と情熱の可視化</h4>
+                                <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700 }}>クリエイティビティを爆発させる本気のステージ</h4>
                                 <p style={{ color: 'var(--text-sub)', marginBottom: '1.5rem' }}>
-                                    YouTubeというプラットフォームで確かなコミュニティを築き上げてきた表現者たち。しかし、画面の中だけでは伝えきれない表現衝動や、まだ見ぬポテンシャルが彼らには眠っています。デジタルな繋がりを超え、クリエイターの「本気のパフォーマンス」をリアルな会場で解き放ち、ファンと共に新しい伝説を創る場所が必要です。
+                                    動画メディアで確かなコミュニティを築き上げてきた表現者たち。しかし、画面の中だけでは伝えきれない表現衝動や、まだ見ぬポテンシャルが眠っているはずです。デジタルな繋がりを超え、クリエイターの「本気のパフォーマンス」をリアルな会場で解き放ち、ファンと共に新しい伝説を「本気」で創ります。
                                 </p>
-                                <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700, marginTop: '2.5rem' }}>普段の動画スタイルとは一線を画す「本気の一面」を30分間のステージに凝縮。</h4>
+                                <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700, marginTop: '2.5rem' }}>熱量の可視化</h4>
                                 <p style={{ color: 'var(--text-sub)' }}>
-                                    クリエイターとファンが同じ空間で熱量を共有し、「リアル投げ銭（ボール）」という形で目に見える愛を届け合うことで、これまでにない深い絆を構築する「日本一距離が近い」プレミアムイベントです。
+                                    参加者やファンはステージに向かって「リアル投げ銭（ボール）」を投げまくります！ステージや演者にあたってもお構いなし！<br />
+                                    ファンの熱量とクリエイターの熱量がぶつかり合う「日本一距離が近い」プレミアムイベントです。
                                 </p>
                             </div>
                         </div>
                     </section>
 
-                    {/* OVERVIEW */}
-                    <section id="overview" className="section-padding" style={{ background: 'var(--bg-accent)' }}>
-                        <div className="container">
-                            <div className="section-header">
-                                <h2 className="section-title font-display text-gradient">OVERVIEW</h2>
-                                <div className="section-line"></div>
-                            </div>
 
-                            <div className="glass-panel feature-card hover-lift" style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
-                                    <div className="feature-icon" style={{ margin: 0, fontSize: '2.5rem' }}>📅</div>
-                                    <div>
-                                        <h3 className="font-accent" style={{ color: 'var(--text-sub)', marginBottom: '0.25rem', fontSize: '0.875rem' }}>DATE & TIME</h3>
-                                        <p className="font-display" style={{ fontSize: '1.25rem', color: '#fff' }}>2026年 某日 <span style={{ color: 'var(--primary)', fontWeight: 'bold', marginLeft: '1rem', fontSize: '1rem' }}>19:30 開場 / 23:30 終了</span></p>
-                                    </div>
-                                </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                                    <div className="feature-icon" style={{ margin: 0, fontSize: '2.5rem' }}>🎙️</div>
-                                    <div>
-                                        <h3 className="font-accent" style={{ color: 'var(--text-sub)', marginBottom: '0.25rem', fontSize: '0.875rem' }}>LINEUP</h3>
-                                        <p className="font-display" style={{ fontSize: '1.25rem', color: '#fff' }}>本気の表現者たち <span style={{ color: 'var(--primary)', fontWeight: 'bold', marginLeft: '1rem', fontSize: '1rem' }}>4〜5組 ＋ 著名MC</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
 
                     {/* CONTENTS */}
                     <section id="stage" className="section-padding">
@@ -867,12 +842,46 @@
                                 <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>予算50万円想定。この人のライブから入るのもあり</p>
                             </div>
                             <div className="glass-panel hover-lift" style={{ display: 'inline-block', padding: '3rem 5rem' }}>
-                                <h3 className="font-display" style={{ fontSize: '2.5rem', color: '#fff' }}>ジャンポケ斎藤</h3>
+                                <h3 className="font-display" style={{ fontSize: '2.5rem', color: '#fff' }}>●●</h3>
                             </div>
                         </div>
                     </section>
 
+                    {/* GIG INFO */}
+                    <section id="giginfo" className="section-padding">
+                        <div className="container">
+                            <div className="section-header">
+                                <h2 className="section-title font-display text-gradient">GIG INFO</h2>
+                                <div className="section-line"></div>
+                            </div>
 
+                            <div className="glass-panel feature-card hover-lift" style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
+                                    <div className="feature-icon" style={{ margin: 0, fontSize: '2.5rem' }}>📅</div>
+                                    <div>
+                                        <h3 className="font-accent" style={{ color: 'var(--text-sub)', marginBottom: '0.25rem', fontSize: '0.875rem' }}>DATE & TIME</h3>
+                                        <p className="font-display" style={{ fontSize: '1.25rem', color: '#fff' }}>2026年5月29日(金) <span style={{ color: 'var(--primary)', fontWeight: 'bold', marginLeft: '1rem', fontSize: '1rem' }}>20:00〜23:00</span></p>
+                                    </div>
+                                </div>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
+                                    <div className="feature-icon" style={{ margin: 0, fontSize: '2.5rem' }}>📍</div>
+                                    <div>
+                                        <h3 className="font-accent" style={{ color: 'var(--text-sub)', marginBottom: '0.25rem', fontSize: '0.875rem' }}>VENUE</h3>
+                                        <p className="font-display" style={{ fontSize: '1.25rem', color: '#fff' }}>
+                                            <a href="http://www.cyclone1997.com/home.html" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>渋谷サイクロン (shibuya CYCLONE)</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+                                    <div className="feature-icon" style={{ margin: 0, fontSize: '2.5rem' }}>🎫</div>
+                                    <div>
+                                        <h3 className="font-accent" style={{ color: 'var(--text-sub)', marginBottom: '0.25rem', fontSize: '0.875rem' }}>TICKET</h3>
+                                        <p className="font-display" style={{ fontSize: '1.25rem', color: '#fff' }}>3,500円 <span style={{ color: 'var(--text-sub)', fontSize: '1rem', marginLeft: '0.5rem' }}>(1drink付き)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
                     {/* REQUIREMENTS */}
                     <section id="requirements" className="section-padding" style={{ background: 'var(--bg-accent)' }}>
@@ -885,26 +894,25 @@
 
                             <div className="glass-panel hover-lift" style={{ padding: '3rem', marginBottom: '2rem' }}>
                                 <h3 className="font-bold mb-2" style={{ color: 'var(--primary)', fontSize: '1.25rem' }}>参加資格</h3>
-                                <p style={{ color: 'var(--text-sub)' }}>演奏やパフォーマンス、そしてファンとのコミュニケーションをリアルで「本気で」したい配信者・クリエイター</p>
+                                <p style={{ color: 'var(--text-sub)' }}>演奏やパフォーマンスを「本気で」したい配信者・クリエイター</p>
                             </div>
 
                             <div className="grid-2">
                                 <div className="glass-panel hover-lift" style={{ padding: '3rem' }}>
                                     <h3 className="font-bold mb-4" style={{ color: 'var(--primary)', fontSize: '1.25rem' }}>協力事項</h3>
-                                    <ul style={{ color: 'var(--text-sub)', paddingLeft: '1.5rem', lineHeight: '2' }}>
-                                        <li>イベント会議への参加</li>
-                                        <li>30分の自身のステージの準備・練習</li>
-                                        <li>動画等での告知協力（告知・練習風景などの配信）</li>
-                                        <li>イベントや準備期間の映像の使用許可（内容確認可）</li>
-                                        <li>アフターパーティー・VIPへの会席参加（可能であれば）</li>
+                                    <ul style={{ color: 'var(--text-sub)', listStyleType: 'none', paddingLeft: '0', lineHeight: '2' }}>
+                                        <li>・30分の自身のステージの準備・練習</li>
+                                        <li>・動画等での告知協力（告知・練習風景などの配信）</li>
+                                        <li>・イベントや準備期間の映像の使用許可（内容確認可）</li>
+                                        <li>・アフターパーティー・VIPへの会席参加</li>
                                     </ul>
                                 </div>
                                 <div className="glass-panel hover-lift" style={{ padding: '3rem' }}>
                                     <h3 className="font-bold mb-4" style={{ color: 'var(--primary)', fontSize: '1.25rem' }}>主催協力事項</h3>
-                                    <ul style={{ color: 'var(--text-sub)', paddingLeft: '1.5rem', lineHeight: '2', marginBottom: '2rem' }}>
-                                        <li>会場・機材・必要サポートスタッフの手配</li>
-                                        <li>告知用MV・Webサイトの作成</li>
-                                        <li>演出・進行のサポート</li>
+                                    <ul style={{ color: 'var(--text-sub)', listStyleType: 'none', paddingLeft: '0', lineHeight: '2', marginBottom: '2rem' }}>
+                                        <li>・会場・機材・必要サポートスタッフの手配</li>
+                                        <li>・告知用MV・Webサイトの作成</li>
+                                        <li>・演出・進行のサポート</li>
                                     </ul>
                                     <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
                                         <h3 className="font-bold mb-2" style={{ color: 'var(--primary)', fontSize: '1.25rem' }}>収益分配</h3>
@@ -965,7 +973,7 @@
 
                     <footer style={{ background: '#000', padding: '3rem 0', textAlign: 'center', borderTop: '1px solid #222' }}>
                         <div className="font-display text-primary-gradient" style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '1rem' }}>
-                            CREATOR FES 2026
+                            それ食え祭り 2026
                         </div>
                         <p style={{ color: 'var(--text-sub)', fontSize: '0.875rem' }}>&copy; 2026 実行委員会 All Rights Reserved.</p>
                     </footer>
