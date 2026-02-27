@@ -240,18 +240,27 @@
             overflow: hidden;
         }
 
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
         .hero-bg {
             position: absolute;
             inset: 0;
-            z-index: 0;
-            background: radial-gradient(circle at 50% 50%, #2a2a00 0%, var(--bg-color) 70%);
-            opacity: 0.5;
+            z-index: 1;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.5) 0%, rgba(5, 5, 5, 0.7) 80%, rgba(5, 5, 5, 1) 100%);
         }
 
         .hero-particles {
             position: absolute;
             inset: 0;
-            z-index: 1;
+            z-index: 2;
             background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             opacity: 0.3;
@@ -611,6 +620,9 @@
 
                     {/* Hero Section */}
                     <section id="home" className="hero">
+                        <video autoPlay loop muted playsInline className="hero-video">
+                            <source src="img/top.mp4" type="video/mp4" />
+                        </video>
                         <div className="hero-bg"></div>
                         <div className="hero-particles"></div>
                         <div className="hero-content animate-fade-up">
@@ -653,20 +665,22 @@
                     </section>
 
                     {/* VISION */}
-                    <section id="vision" className="section-padding" style={{ position: 'relative' }}>
-                        <div className="container">
+                    <section id="vision" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+                        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url("img/vision.jpeg")', backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
+                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(5, 5, 5, 1) 0%, rgba(5, 5, 5, 0.6) 20%, rgba(5, 5, 5, 0.6) 80%, rgba(5, 5, 5, 1) 100%)', zIndex: 1 }}></div>
+                        <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                             <div className="section-header animate-fade-up">
                                 <h2 className="section-title font-display text-primary-gradient">VISION</h2>
                                 <div className="section-line"></div>
                             </div>
 
-                            <div className="glass-panel feature-card hover-lift animate-fade-up delay-1" style={{ maxWidth: '900px', margin: '0 auto' }}>
-                                <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700 }}>クリエイティビティを爆発させる本気のステージ</h4>
-                                <p style={{ color: 'var(--text-sub)', marginBottom: '1.5rem' }}>
+                            <div className="feature-card animate-fade-up delay-1" style={{ maxWidth: '900px', margin: '0 auto', background: 'transparent', border: 'none', boxShadow: 'none' }}>
+                                <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700, textShadow: '0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)' }}>クリエイティビティを爆発させる本気のステージ</h4>
+                                <p style={{ color: '#fff', marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 0, 0, 0.6)', fontWeight: 500 }}>
                                     動画メディアで確かなコミュニティを築き上げてきた表現者たち。しかし、画面の中だけでは伝えきれない表現衝動や、まだ見ぬポテンシャルが眠っているはずです。デジタルな繋がりを超え、クリエイターの「本気のパフォーマンス」をリアルな会場で解き放ち、ファンと共に新しい伝説を「本気」で創ります。
                                 </p>
-                                <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700, marginTop: '2.5rem' }}>熱量の可視化</h4>
-                                <p style={{ color: 'var(--text-sub)' }}>
+                                <h4 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700, marginTop: '2.5rem', textShadow: '0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)' }}>熱量の可視化</h4>
+                                <p style={{ color: '#fff', textShadow: '0 2px 10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 0, 0, 0.6)', fontWeight: 500 }}>
                                     参加者やファンはステージに向かって「リアル投げ銭（ボール）」を投げまくります！ステージや演者にあたってもお構いなし！<br />
                                     ファンの熱量とクリエイターの熱量がぶつかり合う「日本一距離が近い」プレミアムイベントです。
                                 </p>
