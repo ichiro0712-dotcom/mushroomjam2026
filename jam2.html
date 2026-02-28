@@ -767,8 +767,18 @@
                     </section>
 
                     {/* BALL SYSTEM */}
-                    <section id="oshiball" className="section-padding" style={{ background: '#0a0a0a' }}>
-                        <div className="container">
+                    <section id="oshiball" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+                        <div style={{
+                            position: 'absolute',
+                            inset: 0,
+                            background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.85) 20%, rgba(5, 5, 5, 0.9) 80%, #050505 100%), url("img/ball-system-bg.jpg")',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            filter: 'blur(4px)',
+                            transform: 'scale(1.1)',
+                            zIndex: 0
+                        }}></div>
+                        <div className="container relative z-10">
                             <div className="section-header">
                                 <h2 className="section-title font-display text-gradient">BALL SYSTEM</h2>
                                 <div className="section-line"></div>
@@ -848,7 +858,11 @@
                     </section>
 
                     {/* MC LIST */}
-                    <section id="mc" className="section-padding" style={{ background: 'var(--bg-accent)' }}>
+                    <section id="mc" className="section-padding" style={{
+                        background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.7) 20%, rgba(5, 5, 5, 0.8) 80%, #050505 100%), url("img/mc-guest-bg.jpg")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}>
                         <div className="container text-center">
                             <div className="section-header">
                                 <h2 className="section-title font-display text-primary-gradient">MC GUEST</h2>
@@ -898,7 +912,11 @@
                     </section>
 
                     {/* REQUIREMENTS */}
-                    <section id="requirements" className="section-padding" style={{ background: 'var(--bg-accent)' }}>
+                    <section id="requirements" className="section-padding" style={{
+                        background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.75) 20%, rgba(5, 5, 5, 0.85) 80%, #050505 100%), url("img/requirements-bg.jpg")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}>
                         <div className="container">
                             <div className="section-header">
                                 <h2 className="section-title font-display text-primary-gradient">REQUIREMENTS</h2>
@@ -972,7 +990,13 @@
                     </section>
 
                     {/* CTA & FOOTER */}
-                    <section className="section-padding text-center" style={{ position: 'relative', overflow: 'hidden' }}>
+                    <section className="section-padding text-center" style={{
+                        position: 'relative',
+                        overflow: 'hidden',
+                        background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.7) 20%, rgba(5, 5, 5, 0.8) 80%, #050505 100%), url("img/cta-bg.jpg")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 60%)', zIndex: 0 }}></div>
                         <div className="container relative z-10">
                             <h2 className="font-display" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '2rem' }}>
