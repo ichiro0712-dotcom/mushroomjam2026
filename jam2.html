@@ -24,8 +24,8 @@
             --primary-glow: rgba(255, 247, 106, 0.4);
             --text-main: #FFFFFF;
             --text-sub: #A0A0A0;
-            --glass-bg: rgba(20, 20, 20, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(20, 20, 20, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.1);
 
             --font-display: 'Montserrat', 'Noto Sans JP', sans-serif;
             --font-body: 'Noto Sans JP', sans-serif;
@@ -43,6 +43,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            font-size: 1.375rem;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
@@ -204,7 +205,7 @@
         .nav-link {
             color: var(--text-main);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1.25rem;
             font-weight: 700;
             transition: color 0.2s ease;
             position: relative;
@@ -276,27 +277,27 @@
 
         .badge {
             display: inline-block;
-            padding: 0.5rem 1.5rem;
+            padding: 0.75rem 2.5rem;
             border-radius: 50px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            background: rgba(255, 215, 0, 0.15);
             color: var(--primary);
-            font-weight: 700;
-            font-size: 0.875rem;
+            font-weight: 900;
+            font-size: 2rem;
             letter-spacing: 0.1em;
             margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-size: clamp(4.5rem, 10vw, 8.5rem);
             line-height: 1.1;
             margin-bottom: 1.5rem;
             text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
 
         .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
             color: var(--text-sub);
             margin-bottom: 4rem;
             font-weight: 500;
@@ -309,7 +310,7 @@
         }
 
         .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(4rem, 8vw, 5.5rem);
             margin-bottom: 1rem;
         }
 
@@ -377,7 +378,7 @@
         }
 
         .feature-title {
-            font-size: 1.5rem;
+            font-size: 2.25rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
@@ -408,7 +409,7 @@
             padding: 0.75rem 0.5rem;
             border-bottom: 1px solid var(--glass-border);
             text-align: left;
-            font-size: 0.85rem;
+            font-size: 1.25rem;
         }
 
         @media (min-width: 768px) {
@@ -416,14 +417,14 @@
             .pricing-table th,
             .pricing-table td {
                 padding: 1.5rem;
-                font-size: 1rem;
+                font-size: 1.5rem;
             }
         }
 
         .pricing-table th {
             font-family: var(--font-accent);
             color: var(--text-sub);
-            font-size: 0.875rem;
+            font-size: 1.25rem;
             letter-spacing: 0.1em;
         }
 
@@ -579,7 +580,7 @@
                     <header className={`nav-header ${scrolled ? 'shadow-lg' : ''}`} style={{ background: scrolled ? 'rgba(5,5,5,0.95)' : 'rgba(5,5,5,0.5)' }}>
                         <div className="container nav-content">
                             <div className="font-display" style={{ fontSize: '1.25rem', fontWeight: 900 }}>
-                                <span className="text-primary-gradient">それ食え祭り</span> <span className="text-gray-500">2026</span>
+                                <span className="text-primary-gradient">それ食え祭</span> <span className="text-gray-500">2026</span>
                             </div>
 
                             <nav className="nav-links">
@@ -629,7 +630,7 @@
                             <div className="badge">2026.5.29 20:00 START</div>
                             <h1 className="hero-title font-display">
                                 <span className="text-primary-gradient" style={{ display: 'block', fontSize: 'clamp(1rem, 3vw, 2rem)', marginBottom: '0.5rem' }}>それだけでは食っていけないクリエイター祭り</span>
-                                <span style={{ display: 'block', color: '#fff' }}>それ食え祭り</span>
+                                <span style={{ display: 'block', color: '#fff' }}>それ食え祭</span>
                                 <span className="text-primary-gradient" style={{ display: 'block', marginTop: '0.5rem' }}>2026</span>
                             </h1>
                             <p className="hero-subtitle">
@@ -667,7 +668,7 @@
                     {/* VISION */}
                     <section id="vision" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
                         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url("img/vision.jpeg")', backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
-                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(5, 5, 5, 1) 0%, rgba(5, 5, 5, 0.6) 20%, rgba(5, 5, 5, 0.6) 80%, rgba(5, 5, 5, 1) 100%)', zIndex: 1 }}></div>
+                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(5, 5, 5, 1) 0%, rgba(5, 5, 5, 0.35) 20%, rgba(5, 5, 5, 0.35) 80%, rgba(5, 5, 5, 1) 100%)', zIndex: 1 }}></div>
                         <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                             <div className="section-header animate-fade-up">
                                 <h2 className="section-title font-display text-primary-gradient">VISION</h2>
@@ -771,7 +772,7 @@
                         <div style={{
                             position: 'absolute',
                             inset: 0,
-                            background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.85) 20%, rgba(5, 5, 5, 0.9) 80%, #050505 100%), url("img/ball-system-bg.jpg")',
+                            background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.75) 20%, rgba(5, 5, 5, 0.75) 80%, #050505 100%), url("img/ball-system-bg.jpg")',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             filter: 'blur(4px)',
@@ -859,7 +860,7 @@
 
                     {/* MC LIST */}
                     <section id="mc" className="section-padding" style={{
-                        background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.7) 20%, rgba(5, 5, 5, 0.8) 80%, #050505 100%), url("img/mc-guest-bg.jpg")',
+                        background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.35) 20%, rgba(5, 5, 5, 0.35) 80%, #050505 100%), url("img/mc-guest-bg.jpg")',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}>
@@ -913,7 +914,7 @@
 
                     {/* REQUIREMENTS */}
                     <section id="requirements" className="section-padding" style={{
-                        background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.75) 20%, rgba(5, 5, 5, 0.85) 80%, #050505 100%), url("img/requirements-bg.jpg")',
+                        background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.35) 20%, rgba(5, 5, 5, 0.35) 80%, #050505 100%), url("img/requirements-bg.jpg")',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}>
@@ -921,34 +922,53 @@
                             <div className="section-header">
                                 <h2 className="section-title font-display text-primary-gradient">REQUIREMENTS</h2>
                                 <div className="section-line"></div>
-                                <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>参加要項</p>
+                                <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.5rem' }}>参加要項</p>
                             </div>
 
-                            <div style={{ padding: '0', marginBottom: '2rem' }}>
-                                <h3 className="font-bold mb-2" style={{ color: 'var(--primary)', fontSize: '1.25rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>参加資格</h3>
-                                <p style={{ color: '#fff', textShadow: '0 2px 10px rgba(0,0,0,0.8)', fontWeight: 500 }}>演奏やパフォーマンスを「本気で」したい配信者・クリエイター</p>
+                            <div className="glass-panel" style={{
+                                padding: '2.5rem',
+                                marginBottom: '4rem',
+                                background: 'transparent',
+                                backdropFilter: 'none',
+                                border: 'none',
+                                boxShadow: 'none'
+                            }}>
+                                <h3 className="font-bold mb-4" style={{ color: 'var(--primary)', fontSize: '2rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>参加資格</h3>
+                                <p style={{ color: '#fff', fontSize: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)', fontWeight: 500 }}>演奏やパフォーマンスを「本気で」したい配信者・クリエイター</p>
                             </div>
 
-                            <div className="grid-2">
-                                <div style={{ padding: '0' }}>
-                                    <h3 className="font-bold mb-4" style={{ color: 'var(--primary)', fontSize: '1.25rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>協力事項</h3>
-                                    <ul style={{ color: '#fff', listStyleType: 'none', paddingLeft: '0', lineHeight: '2', textShadow: '0 2px 10px rgba(0,0,0,0.8)', fontWeight: 500 }}>
-                                        <li>・30分の自身のステージの準備・練習</li>
-                                        <li>・動画等での告知協力（告知・練習風景などの配信）</li>
-                                        <li>・イベントや準備期間の映像の使用許可（内容確認可）</li>
+                            <div className="grid-2" style={{ gap: '4rem' }}>
+                                <div className="glass-panel" style={{
+                                    padding: '2.5rem',
+                                    background: 'transparent',
+                                    backdropFilter: 'none',
+                                    border: 'none',
+                                    boxShadow: 'none'
+                                }}>
+                                    <h3 className="font-bold mb-6" style={{ color: 'var(--primary)', fontSize: '2rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>協力事項</h3>
+                                    <ul style={{ color: '#fff', listStyleType: 'none', paddingLeft: '0', lineHeight: '2', textShadow: '0 2px 10px rgba(0,0,0,0.8)', fontWeight: 500, fontSize: '1.25rem' }}>
+                                        <li style={{ marginBottom: '1rem' }}>・30分の自身のステージの準備・練習</li>
+                                        <li style={{ marginBottom: '1rem' }}>・動画等での告知協力（告知・練習風景などの配信）</li>
+                                        <li style={{ marginBottom: '1rem' }}>・イベントや準備期間の映像の使用許可（内容確認可）</li>
                                         <li>・アフターパーティー・VIPへの会席参加</li>
                                     </ul>
                                 </div>
-                                <div style={{ padding: '0' }}>
-                                    <h3 className="font-bold mb-4" style={{ color: 'var(--primary)', fontSize: '1.25rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>主催協力事項</h3>
-                                    <ul style={{ color: '#fff', listStyleType: 'none', paddingLeft: '0', lineHeight: '2', marginBottom: '2rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)', fontWeight: 500 }}>
-                                        <li>・会場・機材・必要サポートスタッフの手配</li>
-                                        <li>・告知用MV・Webサイトの作成</li>
+                                <div className="glass-panel" style={{
+                                    padding: '2.5rem',
+                                    background: 'transparent',
+                                    backdropFilter: 'none',
+                                    border: 'none',
+                                    boxShadow: 'none'
+                                }}>
+                                    <h3 className="font-bold mb-6" style={{ color: 'var(--primary)', fontSize: '2rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>主催協力事項</h3>
+                                    <ul style={{ color: '#fff', listStyleType: 'none', paddingLeft: '0', lineHeight: '2', marginBottom: '3rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)', fontWeight: 500, fontSize: '1.25rem' }}>
+                                        <li style={{ marginBottom: '1rem' }}>・会場・機材・必要サポートスタッフの手配</li>
+                                        <li style={{ marginBottom: '1rem' }}>・告知用MV・Webサイトの作成</li>
                                         <li>・演出・進行のサポート</li>
                                     </ul>
-                                    <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
-                                        <h3 className="font-bold mb-2" style={{ color: 'var(--primary)', fontSize: '1.25rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>収益分配</h3>
-                                        <p style={{ color: '#fff', textShadow: '0 2px 10px rgba(0,0,0,0.8)', fontWeight: 500 }}>イベント収益および投げ銭（推しボール）による収益は、規定の割合で還元いたします。</p>
+                                    <div style={{ borderTop: 'none', paddingTop: '2.5rem' }}>
+                                        <h3 className="font-bold mb-4" style={{ color: 'var(--primary)', fontSize: '2rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>収益分配</h3>
+                                        <p style={{ color: '#fff', textShadow: '0 2px 10px rgba(0,0,0,0.8)', fontWeight: 500, fontSize: '1.25rem' }}>イベント収益および投げ銭（推しボール）による収益は、規定の割合で還元いたします。</p>
                                     </div>
                                 </div>
                             </div>
