@@ -852,7 +852,7 @@ react_script = """    <script type="text/babel">
                             <div className="section-header">
                                 <h2 className="section-title font-display text-primary-gradient">MC GUEST</h2>
                                 <div className="section-line"></div>
-                                <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>予算50万円想定。この人のライブから入るのもあり</p>
+                                <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>この人のライブから入るのもあり</p>
                             </div>
                             <div className="glass-panel" style={{ display: 'inline-block', padding: '3rem 5rem' }}>
                                 <h3 className="font-display" style={{ fontSize: '2.5rem', color: '#fff' }}>ジャンポケ斎藤</h3>
