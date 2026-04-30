@@ -546,14 +546,10 @@
             const applicationUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeQCrP79MVOQz9JqYtHNsCCrRSKIbBkrTfLA3MmzWGqSacIxQ/viewform?usp=header";
 
             const oshiItems = [
-                { name: "ピンポン", price: "100円", effect: "挨拶代わりの一投。" },
                 { name: "カラーボール", price: "300円", effect: "応援の意思表示。" },
-                { name: "ビーチボール", price: "1,500円", effect: "ステージを彩る。演者の視界に確実に入る。" },
-                { name: "ビーチボール（大）", price: "3,000円", effect: "目立つ。転換時の回収で存在感を発揮。" },
-                { name: "ピンポンバズーカ", price: "5,000円", effect: "ステージへ向けて射出。一気に会場を沸かせる。" },
-                { name: "バランスボール", price: "10,000円", effect: "巨大な愛。演者が抱えるほどの大きさ。" },
-                { name: "バランスボール（銀）", price: "30,000円", effect: "会場ライティングが変化。VIP演出発動。" },
-                { name: "バランスボール（金）", price: "50,000円", effect: "特効＋会場BGMが豪華に変化。" }
+                { name: "ビーチボール", price: "1,000円", effect: "ステージを彩る。演者の視界に確実に入る。" },
+                { name: "ビーチボール大", price: "5,000円", effect: "目立つ。転換時の回収で存在感を発揮。" },
+                { name: "ビーチボール特大", price: "10,000円", effect: "巨大な愛。演者が抱えるほどの大きさ。" }
             ];
 
             const news = [
@@ -571,6 +567,7 @@
                 { name: 'VISION', href: '#vision' },
                 { name: 'CONTENTS', href: '#stage' },
                 { name: 'BALL SYSTEM', href: '#oshiball' },
+                { name: 'ARTISTS', href: '#artists' },
                 { name: 'TIMETABLE', href: '#timetable' },
             ];
 
@@ -859,6 +856,67 @@
                         </div>
                     </section>
 
+                    {/* ARTISTS */}
+                    <section id="artists" className="section-padding">
+                        <div className="container">
+                            <div className="section-header">
+                                <h2 className="section-title font-display text-gradient">ARTISTS</h2>
+                                <div className="section-line"></div>
+                                <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>確定した出演者</p>
+                            </div>
+                            <div className="grid-4">
+                                {/* Artist 5 */}
+                                <div className="glass-panel hover-lift" style={{ padding: '2rem', textAlign: 'center' }}>
+                                    <div style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <img src="img/mushroom_stamps.jpg" alt="mushroom stamps" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display='none'; e.target.parentNode.innerHTML='👤'; e.target.parentNode.style.fontSize='3rem'; }} />
+                                    </div>
+                                    <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>mushroom stamps</h3>
+                                    <p style={{ color: 'var(--text-main)', fontSize: '0.9rem' }}>バンド</p>
+                                </div>
+                                {/* Artist 6 */}
+                                <div className="glass-panel hover-lift" style={{ padding: '2rem', textAlign: 'center' }}>
+                                    <div style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <img src="img/motoya.jpg" alt="Motoya" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display='none'; e.target.parentNode.innerHTML='👤'; e.target.parentNode.style.fontSize='3rem'; }} />
+                                    </div>
+                                    <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>Motoya</h3>
+                                    <p style={{ color: 'var(--text-main)', fontSize: '0.9rem' }}>シンガー</p>
+                                </div>
+                                {/* Artist 1 */}
+                                <div className="glass-panel hover-lift" style={{ padding: '2rem', textAlign: 'center' }}>
+                                    <div style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <img src="img/baboon.jpg" alt="ばぶーん" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display='none'; e.target.parentNode.innerHTML='👤'; e.target.parentNode.style.fontSize='3rem'; }} />
+                                    </div>
+                                    <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>ばぶーん</h3>
+                                    <p style={{ color: 'var(--text-main)', fontSize: '0.9rem' }}>お笑い芸人(松竹芸能)</p>
+                                </div>
+                                {/* Artist 2 */}
+                                <div className="glass-panel hover-lift" style={{ padding: '2rem', textAlign: 'center' }}>
+                                    <div style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <img src="img/twilight.jpg" alt="トワイライト渚" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display='none'; e.target.parentNode.innerHTML='👤'; e.target.parentNode.style.fontSize='3rem'; }} />
+                                    </div>
+                                    <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>トワイライト渚</h3>
+                                    <p style={{ color: 'var(--text-main)', fontSize: '0.9rem' }}>お笑い芸人(松竹芸能)</p>
+                                </div>
+                                {/* Artist 3 */}
+                                <div className="glass-panel hover-lift" style={{ padding: '2rem', textAlign: 'center' }}>
+                                    <div style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <img src="img/youngpine.jpg" alt="ヤングパイン" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display='none'; e.target.parentNode.innerHTML='👤'; e.target.parentNode.style.fontSize='3rem'; }} />
+                                    </div>
+                                    <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>ヤングパイン</h3>
+                                    <p style={{ color: 'var(--text-main)', fontSize: '0.9rem' }}>お笑い芸人(松竹芸能)</p>
+                                </div>
+                                {/* Artist 4 */}
+                                <div className="glass-panel hover-lift" style={{ padding: '2rem', textAlign: 'center' }}>
+                                    <div style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <img src="img/dorondou.jpg" alt="ドロン銅" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display='none'; e.target.parentNode.innerHTML='👤'; e.target.parentNode.style.fontSize='3rem'; }} />
+                                    </div>
+                                    <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>ドロン銅</h3>
+                                    <p style={{ color: 'var(--text-main)', fontSize: '0.9rem' }}>お笑い芸人(松竹芸能)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     {/* MC LIST */}
                     <section id="mc" className="section-padding" style={{
                         background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.35) 20%, rgba(5, 5, 5, 0.35) 80%, #050505 100%), url("img/mc-guest-bg.jpg")',
@@ -871,8 +929,12 @@
                                 <div className="section-line"></div>
                                 <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>この人のライブから入るのもあり</p>
                             </div>
-                            <div className="glass-panel hover-lift" style={{ display: 'inline-block', padding: '3rem 5rem' }}>
-                                <h3 className="font-display" style={{ fontSize: '2.5rem', color: '#fff' }}>●●</h3>
+                            <div className="glass-panel hover-lift" style={{ display: 'inline-block', padding: '3rem 5rem', textAlign: 'center' }}>
+                                <div style={{ width: '200px', height: '200px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 2rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <img src="img/dainoji.jpg" alt="ダイノジ大谷" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display='none'; e.target.parentNode.innerHTML='🎤'; e.target.parentNode.style.fontSize='4rem'; }} />
+                                </div>
+                                <h3 className="font-display" style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: '#fff' }}>ダイノジ大谷</h3>
+                                <p style={{ color: 'var(--primary)', fontSize: '1.2rem', fontWeight: 'bold' }}>お笑い芸人(吉本興業)</p>
                             </div>
                         </div>
                     </section>
