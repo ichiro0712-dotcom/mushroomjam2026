@@ -553,8 +553,11 @@
             ];
 
             const news = [
+                { date: "2026.04.09", title: "アイドル「さくらんBOYZ」の出演決定！", description: "新たな出演アーティストとして、アイドル「さくらんBOYZ」の出演が決定いたしました！当日のステージをお楽しみに。" },
+                { date: "2026.04.07", title: "松竹芸能から4組の出演が決定！", description: "イベントを盛り上げるお笑い芸人として、松竹芸能から「ばぶーん」「トワイライト渚」「ヤングパイン」「ドロン銅」の4組の出演が決定しました！" },
+                { date: "2026.04.01", title: "Motoyaの出演が決定！", description: "大人気YouTube番組「令和の虎」への出演でも話題となったシンガー、Motoyaの出演が決定いたしました！当日のパフォーマンスをお楽しみに。" },
                 { date: "2026.03.14", title: "出演クリエイター募集開始", description: "「それだけでは食っていけないクリエイター祭り2026」の参加者を募集開始いたしました。本気の30分ステージを創り上げてくれるクリエイターを募集しています！" },
-                { date: "2026.03.10", title: "MC決定！", description: "イベントを熱く盛り上げる総合MCとして、●●の出演が決定しました！当日のステージをお楽しみに。" }
+                { date: "2026.03.10", title: "MC決定！", description: "イベントを熱く盛り上げる総合MCとして、ダイノジ大谷さんの出演が決定しました！当日のステージをお楽しみに。" }
             ];
 
             useEffect(() => {
@@ -731,7 +734,7 @@
                                 </div>
 
                                 {/* Collab */}
-                                <div className="animate-fade-up delay-1" style={{ padding: '2rem', position: 'relative', overflow: 'hidden' }}>
+                                <div className="animate-fade-up delay-1" style={{ display: 'none', padding: '2rem', position: 'relative', overflow: 'hidden' }}>
                                     <div style={{ position: 'absolute', left: '-5%', bottom: '-20%', fontSize: '20rem', opacity: 0.03, pointerEvents: 'none' }}>🤝</div>
 
                                     <div style={{ marginBottom: '3rem', position: 'relative', zIndex: 10 }}>
@@ -832,7 +835,7 @@
                     </section>
 
                     {/* IMPACT */}
-                    <section id="impact" className="section-padding" style={{ position: 'relative' }}>
+                    <section id="impact" className="section-padding" style={{ display: 'none', position: 'relative' }}>
                         <div className="container">
                             <div className="section-header">
                                 <h2 className="section-title font-display text-gradient">IMPACT</h2>
@@ -865,6 +868,14 @@
                                 <p style={{ color: 'var(--text-sub)', maxWidth: '600px', margin: '2rem auto 0', fontSize: '1.1rem' }}>出演者一覧</p>
                             </div>
                             <div className="grid-4">
+                                {/* Artist 7 */}
+                                <div className="glass-panel hover-lift" style={{ padding: '2rem', textAlign: 'center' }}>
+                                    <div style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <img src="img/sakuran.jpg" alt="さくらんBOYZ" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display='none'; e.target.parentNode.innerHTML='👤'; e.target.parentNode.style.fontSize='3rem'; }} />
+                                    </div>
+                                    <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' }}>さくらんBOYZ</h3>
+                                    <p style={{ color: 'var(--text-main)', fontSize: '0.9rem' }}>アイドル</p>
+                                </div>
                                 {/* Artist 5 */}
                                 <div className="glass-panel hover-lift" style={{ padding: '2rem', textAlign: 'center' }}>
                                     <div style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.1)', margin: '0 auto 1.5rem', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -968,7 +979,7 @@
                                     <div className="feature-icon" style={{ margin: 0, fontSize: '2.5rem', filter: 'drop-shadow(0 2px 5px rgba(0,0,0,0.8))' }}>🎫</div>
                                     <div>
                                         <h3 className="font-accent" style={{ color: '#fff', marginBottom: '0.25rem', fontSize: '0.875rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>TICKET</h3>
-                                        <p className="font-display" style={{ fontSize: '1.25rem', color: '#fff', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>3,500円 <span style={{ color: '#fff', fontSize: '1rem', marginLeft: '0.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>(1drink付き)</span></p>
+                                        <p className="font-display" style={{ fontSize: '1.25rem', color: '#fff', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>2,000円 <span style={{ color: '#fff', fontSize: '1rem', marginLeft: '0.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>(投げ銭ボール300円×5個/ ドリンク代込み)</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -977,6 +988,7 @@
 
                     {/* REQUIREMENTS */}
                     <section id="requirements" className="section-padding" style={{
+                        display: 'none',
                         background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.35) 20%, rgba(5, 5, 5, 0.35) 80%, #050505 100%), url("img/requirements-bg.jpg")',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
