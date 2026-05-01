@@ -569,11 +569,13 @@ react_script = """    <script type="text/babel">
                                 ))}
                             </nav>
 
+                            {false && (
                             <div className="hidden lg:block" style={{ display: 'none' /* hidden on mobile, handle via media query conceptually */ }}>
                                 <a href={applicationUrl} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ display: 'inline-flex', padding: '0.5rem 1.5rem', fontSize: '0.875rem' }}>
                                     ENTRY
                                 </a>
                             </div>
+                            )}
 
                             {/* Mobile menu button */}
                             <button
@@ -592,9 +594,11 @@ react_script = """    <script type="text/babel">
                                         {link.name}
                                     </a>
                                 ))}
+                                {false && (
                                 <a href={applicationUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '1rem 0', color: '#FFF76A', textDecoration: 'none', fontWeight: 'bold' }}>
                                     出演応募はこちら &rarr;
                                 </a>
+                                )}
                             </div>
                         )}
                     </header>
@@ -614,11 +618,13 @@ react_script = """    <script type="text/babel">
                                 画面の向こう側の「本気」を、リアルな空間で解き放て。<br />
                                 ファンと創り上げる、一夜限りのプレミアムライブステージ。
                             </p>
+                            {false && (
                             <div style={{ marginTop: '2rem' }}>
                                 <a href={applicationUrl} target="_blank" rel="noopener noreferrer" className="btn-super">
                                     出演応募はこちら
                                 </a>
                             </div>
+                            )}
                         </div>
                     </section>
 
@@ -938,6 +944,7 @@ react_script = """    <script type="text/babel">
                     </section>
 
                     {/* CTA & FOOTER */}
+                    {false && (
                     <section className="section-padding text-center" style={{ position: 'relative', overflow: 'hidden' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 60%)', zIndex: 0 }}></div>
                         <div className="container relative z-10">
@@ -950,6 +957,7 @@ react_script = """    <script type="text/babel">
                             </a>
                         </div>
                     </section>
+                    )}
 
                     <footer style={{ background: '#000', padding: '3rem 0', textAlign: 'center', borderTop: '1px solid #222' }}>
                         <div className="font-display text-primary-gradient" style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '1rem' }}>

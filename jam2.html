@@ -589,11 +589,13 @@
                                 ))}
                             </nav>
 
+                            {false && (
                             <div className="hidden lg:block" style={{ display: 'none' /* hidden on mobile, handle via media query conceptually */ }}>
                                 <a href={applicationUrl} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ display: 'inline-flex', padding: '0.5rem 1.5rem', fontSize: '0.875rem' }}>
                                     ENTRY
                                 </a>
                             </div>
+                            )}
 
                             {/* Mobile menu button */}
                             <button
@@ -612,9 +614,11 @@
                                         {link.name}
                                     </a>
                                 ))}
+                                {false && (
                                 <a href={applicationUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '1rem 0', color: '#FFF76A', textDecoration: 'none', fontWeight: 'bold' }}>
                                     出演応募はこちら &rarr;
                                 </a>
+                                )}
                             </div>
                         )}
                     </header>
@@ -638,11 +642,13 @@
                                 ファンと創る、一夜限りの<br />
                                 プレミアステージ
                             </p>
+                            {false && (
                             <div style={{ marginTop: '2rem' }}>
                                 <a href={applicationUrl} target="_blank" rel="noopener noreferrer" className="btn-super">
                                     出演応募はこちら
                                 </a>
                             </div>
+                            )}
                         </div>
                     </section>
 
@@ -1085,6 +1091,7 @@
                     </section>
 
                     {/* CTA & FOOTER */}
+                    {false && (
                     <section className="section-padding text-center" style={{
                         position: 'relative',
                         overflow: 'hidden',
@@ -1103,6 +1110,7 @@
                             </a>
                         </div>
                     </section>
+                    )}
 
                     <footer style={{ background: '#000', padding: '3rem 0', textAlign: 'center', borderTop: '1px solid #222' }}>
                         <div className="font-display text-primary-gradient" style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '1rem' }}>
