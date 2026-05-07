@@ -523,6 +523,7 @@ react_script = """    <script type="text/babel">
             const [scrolled, setScrolled] = useState(false);
             const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
             const applicationUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeQCrP79MVOQz9JqYtHNsCCrRSKIbBkrTfLA3MmzWGqSacIxQ/viewform?usp=header";
+            const ticketUrl = "https://livepocket.jp/e/gi_cf";
 
             const oshiItems = [
                 { name: "ピンポン", price: "100円", effect: "挨拶代わりの一投。" },
@@ -569,13 +570,11 @@ react_script = """    <script type="text/babel">
                                 ))}
                             </nav>
 
-                            {false && (
-                            <div className="hidden lg:block" style={{ display: 'none' /* hidden on mobile, handle via media query conceptually */ }}>
-                                <a href={applicationUrl} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ display: 'inline-flex', padding: '0.5rem 1.5rem', fontSize: '0.875rem' }}>
-                                    ENTRY
+                            <div className="hidden lg:block">
+                                <a href={ticketUrl} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ display: 'inline-flex', padding: '0.5rem 1.5rem', fontSize: '0.875rem' }}>
+                                    チケット購入
                                 </a>
                             </div>
-                            )}
 
                             {/* Mobile menu button */}
                             <button
@@ -594,11 +593,9 @@ react_script = """    <script type="text/babel">
                                         {link.name}
                                     </a>
                                 ))}
-                                {false && (
-                                <a href={applicationUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '1rem 0', color: '#FFF76A', textDecoration: 'none', fontWeight: 'bold' }}>
-                                    出演応募はこちら &rarr;
+                                <a href={ticketUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '1rem 0', color: '#FFF76A', textDecoration: 'none', fontWeight: 'bold' }}>
+                                    チケット購入はこちら &rarr;
                                 </a>
-                                )}
                             </div>
                         )}
                     </header>
@@ -618,13 +615,11 @@ react_script = """    <script type="text/babel">
                                 画面の向こう側の「本気」を、リアルな空間で解き放て。<br />
                                 ファンと創り上げる、一夜限りのプレミアムライブステージ。
                             </p>
-                            {false && (
                             <div style={{ marginTop: '2rem' }}>
-                                <a href={applicationUrl} target="_blank" rel="noopener noreferrer" className="btn-super">
-                                    出演応募はこちら
+                                <a href={ticketUrl} target="_blank" rel="noopener noreferrer" className="btn-super">
+                                    チケット購入はこちら
                                 </a>
                             </div>
-                            )}
                         </div>
                     </section>
 
@@ -944,20 +939,17 @@ react_script = """    <script type="text/babel">
                     </section>
 
                     {/* CTA & FOOTER */}
-                    {false && (
                     <section className="section-padding text-center" style={{ position: 'relative', overflow: 'hidden' }}>
                         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 60%)', zIndex: 0 }}></div>
                         <div className="container relative z-10">
                             <h2 className="font-display" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '2rem' }}>
-                                本気のステージを共に創る<br />
-                                仲間を待っています。
+                                チケット好評発売中
                             </h2>
-                            <a href={applicationUrl} target="_blank" rel="noopener noreferrer" className="btn-super" style={{ fontSize: '1.5rem', padding: '1.5rem 4rem' }}>
-                                出演に応募する
+                            <a href={ticketUrl} target="_blank" rel="noopener noreferrer" className="btn-super" style={{ fontSize: '1.5rem', padding: '1.5rem 4rem' }}>
+                                チケット購入はこちら
                             </a>
                         </div>
                     </section>
-                    )}
 
                     <footer style={{ background: '#000', padding: '3rem 0', textAlign: 'center', borderTop: '1px solid #222' }}>
                         <div className="font-display text-primary-gradient" style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '1rem' }}>
