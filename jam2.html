@@ -32,6 +32,10 @@
             --font-accent: 'Oswald', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -544,7 +548,9 @@
             const [scrolled, setScrolled] = useState(false);
             const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
             const applicationUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeQCrP79MVOQz9JqYtHNsCCrRSKIbBkrTfLA3MmzWGqSacIxQ/viewform?usp=header";
-            const ticketUrl = "https://livepocket.jp/e/gi_cf";
+            const ticketUrls = [
+                { name: "チケット購入", url: "#tickets-section" }
+            ];
 
             const oshiItems = [
                 { name: "カラーボール", price: "300円", effect: "応援の意思表示。" },
@@ -590,10 +596,12 @@
                                 ))}
                             </nav>
 
-                            <div className="hidden lg:block">
-                                <a href={ticketUrl} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ display: 'inline-flex', padding: '0.5rem 1.5rem', fontSize: '0.875rem' }}>
-                                    チケット購入
-                                </a>
+                            <div className="hidden lg:flex" style={{ gap: '0.5rem' }}>
+                                {ticketUrls.map((t, i) => (
+                                    <a key={i} href={t.url} className="btn-outline" style={{ display: 'inline-flex', padding: '0.5rem 1.5rem', fontSize: '0.875rem' }}>
+                                        {t.name}
+                                    </a>
+                                ))}
                             </div>
 
                             {/* Mobile menu button */}
@@ -613,9 +621,11 @@
                                         {link.name}
                                     </a>
                                 ))}
-                                <a href={ticketUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '1rem 0', color: '#FFF76A', textDecoration: 'none', fontWeight: 'bold' }}>
-                                    チケット購入はこちら &rarr;
-                                </a>
+                                {ticketUrls.map((t, i) => (
+                                    <a key={i} href={t.url} onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', padding: '1rem 0', color: '#FFF76A', textDecoration: 'none', fontWeight: 'bold' }}>
+                                        {t.name}はこちら &rarr;
+                                    </a>
+                                ))}
                             </div>
                         )}
                     </header>
@@ -639,10 +649,12 @@
                                 ファンと創る、一夜限りの<br />
                                 プレミアステージ
                             </p>
-                            <div style={{ marginTop: '2rem' }}>
-                                <a href={ticketUrl} target="_blank" rel="noopener noreferrer" className="btn-super">
-                                    チケット購入はこちら
-                                </a>
+                            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                {ticketUrls.map((t, i) => (
+                                    <a key={i} href={t.url} className="btn-super">
+                                        {t.name}はこちら
+                                    </a>
+                                ))}
                             </div>
                         </div>
                     </section>
@@ -1086,7 +1098,7 @@
                     </section>
 
                     {/* CTA & FOOTER */}
-                    <section className="section-padding text-center" style={{
+                    <section id="tickets-section" className="section-padding text-center" style={{
                         position: 'relative',
                         overflow: 'hidden',
                         background: 'linear-gradient(to bottom, #050505 0%, rgba(5, 5, 5, 0.7) 20%, rgba(5, 5, 5, 0.8) 80%, #050505 100%), url("img/cta-bg.jpg")',
@@ -1098,9 +1110,17 @@
                             <h2 className="font-display" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '2rem' }}>
                                 チケット好評発売中
                             </h2>
-                            <a href={ticketUrl} target="_blank" rel="noopener noreferrer" className="btn-super" style={{ fontSize: '1.5rem', padding: '1.5rem 4rem' }}>
-                                チケット購入はこちら
-                            </a>
+                            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                <a href="https://www.en-ticket.com/events/11e9e374-cf5e-48cd-9a57-fe6bcc7fd162" target="_blank" rel="noopener noreferrer" className="btn-super" style={{ fontSize: '1.5rem', padding: '1.5rem 4rem', background: 'linear-gradient(135deg, #00C4CC 0%, #0088CC 100%)', color: '#fff' }}>
+                                    EnTicketで購入
+                                </a>
+                                <a href="https://livepocket.jp/e/gi_cf" target="_blank" rel="noopener noreferrer" className="btn-super" style={{ fontSize: '1.5rem', padding: '1.5rem 4rem' }}>
+                                    LivePocketで購入
+                                </a>
+                            </div>
+                            <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+                                <img src="img/enticket_logo.png" alt="EnTicket" style={{ height: '80px', objectFit: 'contain', borderRadius: '6px' }} />
+                            </div>
                         </div>
                     </section>
 
